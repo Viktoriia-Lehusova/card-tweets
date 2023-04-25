@@ -7,6 +7,7 @@ export const Box = styled.div`
   padding-bottom: 24px;
 
   width: 1200px;
+  margin: 0 auto;
 `;
 export const Container = styled.div`
   margin: 0 auto;
