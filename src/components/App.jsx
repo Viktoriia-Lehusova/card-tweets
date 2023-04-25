@@ -2,6 +2,7 @@ import UserList from './UserList/UserList';
 import { fetchUsers, fetchUserId } from '../fetch/fetch';
 import { useEffect, useState } from 'react';
 import { Button } from './Button/Button';
+import { Loader } from './Loader/Loader';
 
 export const App = () => {
   const [users, setUsers] = useState([]);
@@ -60,6 +61,7 @@ export const App = () => {
       {users.length > 0 && (
         <UserList users={users} updateUserFollowers={updateUserFollowers} />
       )}
+      {loading && <div> {Loader()} </div>}
       {isVisible && <Button loadMore={loadMore} />}
       {error && <h2>Something went wrong. Try again.</h2>}
     </div>
