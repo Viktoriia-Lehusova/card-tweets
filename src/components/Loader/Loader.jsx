@@ -4,8 +4,8 @@ export function Loader() {
   return (
     <ColorRing
       visible={true}
-      height="50"
-      width="50"
+      height="200"
+      width="200"
       ariaLabel="blocks-loading"
       wrapperStyle={{}}
       wrapperClass="blocks-wrapper"

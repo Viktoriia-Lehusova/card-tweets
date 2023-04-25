@@ -122,6 +122,9 @@ export const Button = styled.button`
   line-height: 22px;
   text-transform: uppercase;
 
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
   color: #373737;
   background-color: ${props => (props.followed ? ' #5CD3A8' : ' #ebd8ff')};
   &:hover {

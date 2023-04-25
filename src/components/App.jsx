@@ -3,6 +3,7 @@ import { fetchUsers, fetchUserId } from '../fetch/fetch';
 import { useEffect, useState } from 'react';
 import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
+import { Box, Container } from './App.styled';
 
 export const App = () => {
   const [users, setUsers] = useState([]);
@@ -23,7 +24,7 @@ export const App = () => {
 
         const currentUsers = data.slice(firstUsersIndex, lastUsersIndex);
 
-        setUsers(prev => [...prev, ...currentUsers]);
+        setUsers(prevUsers => [...prevUsers, ...currentUsers]);
         setIsVisible(page < Math.ceil(total / perPage));
       } catch (error) {
         setError(error.message);
@@ -57,14 +58,18 @@ export const App = () => {
   };
 
   return (
-    <div>
+    <Box>
       {users.length > 0 && (
         <UserList users={users} updateUserFollowers={updateUserFollowers} />
       )}
-      {loading && <div> {Loader()} </div>}
-      {isVisible && <Button loadMore={loadMore} />}
+      {loading && <Container> {Loader()} </Container>}
+      {isVisible && (
+        <Container>
+          <Button loadMore={loadMore} />
+        </Container>
+      )}
       {error && <h2>Something went wrong. Try again.</h2>}
-    </div>
+    </Box>
   );
 };
 
