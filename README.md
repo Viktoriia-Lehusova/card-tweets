@@ -13,11 +13,11 @@ This app is designed to follow other users.
 
    ## Technologies used
 
-5. HTML
-6. CSS
-7. React.js
-8. REST API
-9. Axios
-10. Git/Github
-11. Mockapi
-12. React hooks
+- HTML
+- CSS
+- React.js
+- REST API
+- Axios
+- Git/Github
+- Mockapi
+- React hooks
